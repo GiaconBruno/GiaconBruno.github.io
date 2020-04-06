@@ -3,7 +3,7 @@ body {
 }
 
 .border {
-    width: 350px;
+    width: auto;
     margin-top: 5vh;
     padding: 10px 0 25px 0;
     text-align: center;
