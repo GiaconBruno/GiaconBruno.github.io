@@ -28,7 +28,7 @@ function dados() {
 
                 var li = document.createElement('li');
                 content.appendChild(li);
-                var list = `<a href="${html_url}/index.html">${name}</a> - ${description}`;
+                var list = `<i class="fas fa-check mr-3"></i><a href="./${name}">${name}</a> - ${description}`;
                 li.innerHTML = list;
                 cont++;
             });
