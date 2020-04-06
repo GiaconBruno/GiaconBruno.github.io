@@ -14,29 +14,23 @@ runAxios(); //EXECUTA FUNCAO ASSINCRONA
 
 //CRIA FUNCAO GET (BUSCAR DADOS)
 function dados() {
+    var cont = 0;
     axios.get('https://api.github.com/users/GiaconBruno/repos')
         .then(function (response) {
             //VARRE TODOS OS DADOS
             response.data.forEach(value => {
                 var { name, description, html_url } = value;
-                console.log(value);
-
-                var title = document.createAttribute("div");
-                var text = document.createTextNode("Projeto");
-                console.log(title);
-                console.log(text);
-
-                title.appendChild(text);
 
                 var content = document.querySelector('#myList');
-                // content.appendChild(title);
+                if (cont === 0) {
+                    content.innerHTML = '';
+                }
 
-                var ul = document.createAttribute('ul');
-
-                var repos = `<li><a href="${html_url}"/index.html>${name}</a> - ${description}</li>`
-
-                // ul.appendChild(repos);
-
+                var li = document.createElement('li');
+                content.appendChild(li);
+                var list = `<a href="${html_url}/index.html">${name}</a> - ${description}`;
+                li.innerHTML = list;
+                cont++;
             });
         })
         .catch(function (error) {
