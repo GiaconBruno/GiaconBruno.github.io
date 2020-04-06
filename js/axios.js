@@ -15,7 +15,7 @@ runAxios(); //EXECUTA FUNCAO ASSINCRONA
 //CRIA FUNCAO GET (BUSCAR DADOS)
 function dados() {
     var cont = 0;
-    axios.get('https://api.github.com/users/GiaconBruno/repos')
+    axios.get('https://api.github.com/users/GiaconBruno/repos/')
         .then(function (response) {
             //VARRE TODOS OS DADOS
             response.data.forEach(value => {
@@ -42,6 +42,9 @@ function dados() {
             });
         })
         .catch(function (error) {
-            console.log(error);
+            document.querySelector('#myList').innerHTML = `<div class="m-3">
+                                                                <h2>Erro ao carregar projetos</h2>
+                                                                <span>${error}</span>
+                                                            </div>`;
         });
-}
+};
