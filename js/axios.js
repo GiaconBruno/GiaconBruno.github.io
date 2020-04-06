@@ -15,7 +15,7 @@ runAxios(); //EXECUTA FUNCAO ASSINCRONA
 //CRIA FUNCAO GET (BUSCAR DADOS)
 function dados() {
     var cont = 0;
-    axios.get('https://api.github.com/users/GiaconBruno/repos/')
+    axios.get('https://api.github.com/users/GiaconBruno/repos')
         .then(function (response) {
             //VARRE TODOS OS DADOS
             response.data.forEach(value => {
