@@ -12,7 +12,40 @@ body {
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
-li {
+a, a:hover {
+    text-decoration: none;
+}
+
+.item {
     text-align: left;
-    list-style: none
+    list-style: none;
+    padding: 2vh 2vh 1vh 3vh;
+    margin: 3vh 0 0 0;
+    border-radius: 5px;
+    box-shadow: 5px 5px 0px 0px rgba(39, 174, 96, 0.5);
+}
+
+.item:hover {
+    box-shadow: 5px 5px 0px 0px rgba(39, 174, 96, 1);
+}
+
+.item span {
+    font-family: Montserrat;
+    font-size: large;
+    color: #333;
+    font-weight: 500;
+}
+
+.item span strong {
+    color: #2ecc71;
+    font-size: larger;
+}
+
+i+span {
+    font-size: small !important;
+    margin: -8px;
+}
+
+.d-flow {
+    display: flow-root;
 }
