@@ -3,14 +3,33 @@ body {
 }
 
 .border {
-    width: auto;
-    margin-top: 5vh;
-    padding: 10px 0 25px 0;
+    max-width: 425px;
+    max-height: 84vh;
+    overflow-x: hidden;
+    overflow-y: auto;
     text-align: center;
     background-color: white;
     border-radius: 10px;
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
 }
+
+/* CARREGANDO */
+
+.min-w {
+    min-width: 100px;
+}
+
+#dv1, #dv2, #dv3 {
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.spinner-grow {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+/* COMPONENTES AXIOS */
 
 a, a:hover {
     text-decoration: none;
@@ -32,8 +51,9 @@ a, a:hover {
 .item span {
     font-family: Montserrat;
     font-size: large;
-    color: #333;
     font-weight: 500;
+    color: #333;
+    max-width: 253px;
 }
 
 .item span strong {
@@ -41,11 +61,41 @@ a, a:hover {
     font-size: larger;
 }
 
+i {
+    line-height: 1 !important;
+}
+
 i+span {
     font-size: small !important;
     margin: -8px;
 }
 
+.negative {
+    color: darkred !important;
+}
+
 .d-flow {
     display: flow-root;
+    font-size: small !important;
+}
+
+.align-middle {
+    color: white;
+}
+
+/* barra vertical */
+
+.border::-webkit-scrollbar {
+    width: 3px;
+    top: 10px;
+    left: 0;
+    right: 5px;
+    bottom: 10px;
+}
+
+.border::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(39, 174, 96, 0.8);
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
 }
