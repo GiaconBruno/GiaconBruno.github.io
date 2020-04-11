@@ -65,7 +65,7 @@ i {
     line-height: 1 !important;
 }
 
-i+span {
+.data {
     font-size: small !important;
     margin: -8px;
 }
@@ -81,6 +81,10 @@ i+span {
 
 .align-middle {
     color: white;
+}
+
+.conteudo {
+    font-size: 1rem !important;
 }
 
 /* barra vertical */

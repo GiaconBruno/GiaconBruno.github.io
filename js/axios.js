@@ -48,11 +48,11 @@ function dados() {
                     var list = `<a href="${link + name}" target="_blank">
                                     <div class="item text-break">
                                         <div>
+                                            <span class="d-flow float-right data">${updated_at} </span>
                                             <i class="mr-3 mt-2 text-success fas ${icon} fa-lg"></i>
-                                            <span class="d-flow float-right">${updated_at} </span>
                                             <span class="text-break"><strong>${name}</strong></span>
                                         </div>
-                                        <span class="text-break"> - ${description}</span>
+                                        <span class="text-break conteudo"> - ${description}</span>
                                      </div>
                                 </a>`;
                     //Define novo registro dentro do 'li'
