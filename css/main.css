@@ -4,7 +4,7 @@ body {
 
 .border {
     max-width: 425px;
-    max-height: 84vh;
+    max-height: 80vh;
     overflow-x: hidden;
     overflow-y: auto;
     text-align: center;
