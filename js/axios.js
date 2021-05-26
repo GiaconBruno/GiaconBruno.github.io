@@ -1,8 +1,8 @@
 //CRIA FUNCAO ASSINCRONA
 const runAxios = async () => {
     //CRIA ELEMENTO DE ESPERAR CARREGAR
-    document.querySelector('#myList').innerHTML = `<div class='mt-3'>
-                                                    <h3 class="text-left">
+    document.querySelector('#myList').innerHTML = `<div class='mt-3 w-100'>
+                                                    <h3 class="text-center">
                                                         <span>Carregando</span>
                                                             <div class="d-inline-flex min-w">
                                                                 <div id="dv1"> </div>
@@ -17,35 +17,37 @@ runAxios(); //EXECUTA FUNCAO ASSINCRONA
 
 //CRIA FUNCAO GET (BUSCAR DADOS)
 function dados() {
-    var cont = 0;
+    let cont = 0;
     axios.get('https://api.github.com/users/GiaconBruno/repos')
         .then(function (response) {
             //VARRE TODOS OS DADOS
             response.data.forEach(value => {
-                var { name, description, updated_at, has_pages } = value;
+                let { name, description, updated_at, has_pages } = value;
                 //Formatando Data
-                updated_at = updated_at.substr(0, 10);
-                updated_at = updated_at.slice(8, 10) + "/" + updated_at.slice(5, 7) + "/" + updated_at.slice(0, 4);
+                updated_at = updated_at.replace(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z/g, '\$3-\$2-\$1')
+                // updated_at = updated_at.substr(0, 10);
+                // updated_at = updated_at.slice(8, 10) + "/" + updated_at.slice(5, 7) + "/" + updated_at.slice(0, 4);
                 //Verificando se existe page.io
-                var icon, link;
-                (has_pages === true) ? icon = 'fa-check' : icon = 'fa-times negative';
-                (has_pages === true) ? link = 'https://GiaconBruno.github.io/' : link = 'https://github.com/giaconbruno/';
+                let icon, link;
+                (has_pages) ? icon = 'fa-check' : icon = 'fa-times negative';
+                (has_pages) ? link = 'https://GiaconBruno.github.io/' : link = 'https://github.com/giaconbruno/';
                 //Removendo descricao null
                 (description === null) ? description = 'Sem descrição' : description;
 
-                //Igonara Repositorio home
+                //Igonara Repositorios
                 if (name !== "GiaconBruno.github.io") {
-                    var content = document.querySelector('#myList');
+                    let content = document.querySelector('#myList');
                     //Valida se first value
-                    if (cont === 0) {
-                        content.innerHTML = '';
-                    }
-                    //Cria Elemento 'li'
-                    var div = document.createElement('div');
-                    //Define Elemento 'li' dentro do Elemento '#myList'
+                    if (!cont) content.innerHTML = '';
+
+                    // Cria Elemento 'div'
+                    let div = document.createElement('div');
+                    div.classList.add("col-12");
+                    div.classList.add("col-lg-6");
+                    // Define Elemento 'div' dentro do Elemento '#myList'
                     content.appendChild(div);
-                    //Criar novo registro
-                    var list = `<a href="${link + name}" target="_blank">
+                    // Criar novo registro
+                    let list = `<a href="${link + name}" target="_blank">
                                     <div class="item text-break">
                                         <div>
                                             <span class="d-flow float-right data">${updated_at} </span>
@@ -55,7 +57,7 @@ function dados() {
                                         <span class="text-break conteudo"> - ${description}</span>
                                      </div>
                                 </a>`;
-                    //Define novo registro dentro do 'li'
+                    //Define novo registro dentro da 'div'
                     div.innerHTML = list;
                     cont++;
                 }

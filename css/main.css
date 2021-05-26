@@ -1,9 +1,13 @@
 body {
-    background-color: #27ae60;
+    /* background-color: #27ae60; */
+    background: linear-gradient(180deg, #237a57, #093028);
+    font-family: Roboto;
+    height: 100vh;
+    max-height: 100vh;
 }
 
 .border {
-    max-width: 425px;
+    /* max-width: 425px; */
     max-height: 80vh;
     overflow-x: hidden;
     overflow-y: auto;
@@ -19,7 +23,9 @@ body {
     min-width: 100px;
 }
 
-#dv1, #dv2, #dv3 {
+#dv1,
+#dv2,
+#dv3 {
     min-width: 20px;
     min-height: 20px;
 }
@@ -31,7 +37,8 @@ body {
 
 /* COMPONENTES AXIOS */
 
-a, a:hover {
+a,
+a:hover {
     text-decoration: none;
 }
 
@@ -41,15 +48,27 @@ a, a:hover {
     padding: 2vh 2vh 1vh 3vh;
     margin: 3vh 0 0 0;
     border-radius: 5px;
-    box-shadow: 5px 5px 0px 0px rgba(39, 174, 96, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    /* border: 1px solid rgba(39, 174, 96, 0.5);
+    box-shadow: 5px 5px 0px 0px rgba(39, 174, 96, 0.5); */
+    border: 1px solid #237a57;
+    border-bottom: 1px solid #237a5790;
+    border-right: 1px solid #237a5790;
+    box-shadow: 5px 5px 0px 0px #237a5790;
 }
 
 .item:hover {
-    box-shadow: 5px 5px 0px 0px rgba(39, 174, 96, 1);
+    /* border: 1px solid rgba(39, 174, 96, 1);
+    box-shadow: 5px 5px 0px 0px rgba(39, 174, 96, 1); */
+    border: 1px solid #237a57;
+    box-shadow: 5px 5px 0px 0px #237a57;
+    transform: scale(1.05);
 }
 
 .item span {
-    font-family: Montserrat;
+    /* font-family: Montserrat; */
     font-size: large;
     font-weight: 500;
     color: #333;
@@ -57,8 +76,33 @@ a, a:hover {
 }
 
 .item span strong {
-    color: #2ecc71;
+    /* color: #2ecc71; */
+    color: #237a57;
     font-size: larger;
+}
+
+.item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: #237a5730;
+    width: 100px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    /* filter: blur(10px); */
+    animation: pulse 1.5s infinite;
+    animation-name: pulse;
+}
+
+@keyframes pulse {
+    from {
+        transform: translateX(-100%) skewX(-45deg);
+    }
+
+    to {
+        transform: translateX(500%) skewX(-45deg);
+    }
 }
 
 i {
