@@ -1,20 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
 body {
     /* background-color: #27ae60; */
     background: linear-gradient(180deg, #237a57, #093028);
-    font-family: Roboto;
+    /* font-family: Roboto; */
+    font-family: 'Poppins', sans-serif;
     height: 100vh;
     max-height: 100vh;
 }
 
+.bigText {
+    font-size: xx-large;
+}
+
 .border {
     /* max-width: 425px; */
-    max-height: 80vh;
+    max-height: calc(100vh - 145px);
     overflow-x: hidden;
     overflow-y: auto;
     text-align: center;
     background-color: white;
     border-radius: 10px;
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.social:hover {
+    transform: scale(1.5);
+    transition: all 0.3s;
 }
 
 /* CARREGANDO */
@@ -45,7 +57,7 @@ a:hover {
 .item {
     text-align: left;
     list-style: none;
-    padding: 2vh 2vh 1vh 3vh;
+    padding: 0 2vh 1vh 3vh;
     margin: 3vh 0 0 0;
     border-radius: 5px;
     position: relative;
@@ -68,9 +80,8 @@ a:hover {
 }
 
 .item span {
-    /* font-family: Montserrat; */
     font-size: large;
-    font-weight: 500;
+    font-weight: 300;
     color: #333;
     max-width: 253px;
 }
@@ -79,9 +90,10 @@ a:hover {
     /* color: #2ecc71; */
     color: #237a57;
     font-size: larger;
+    font-weight: 600;
 }
 
-.item::before {
+.item:hover:before {
     content: '';
     display: block;
     position: absolute;
@@ -110,8 +122,13 @@ i {
 }
 
 .data {
-    font-size: small !important;
-    margin: -8px;
+    font-size: x-small !important;
+    /* margin: -8px; */
+    color: #777;
+}
+
+.text-success {
+    color: #237a57 !important;
 }
 
 .negative {

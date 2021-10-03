@@ -22,24 +22,27 @@ function dados() {
         .then(function (response) {
             //VARRE TODOS OS DADOS
             response.data.forEach(value => {
-                let { name, description, updated_at, has_pages } = value;
+                let { name, description, updated_at, created_at, has_pages, homepage } = value;
                 //Formatando Data
-                updated_at = updated_at.replace(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z/g, '\$3-\$2-\$1')
                 // updated_at = updated_at.substr(0, 10);
                 // updated_at = updated_at.slice(8, 10) + "/" + updated_at.slice(5, 7) + "/" + updated_at.slice(0, 4);
+                // updated_at = updated_at.replace(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z/g, '\$3-\$2-\$1')
+                updated_at = updated_at.slice(0, 10).split('-').reverse().join('/')
+                created_at = created_at.slice(0, 10).split('-').reverse().join('/')
                 //Verificando se existe page.io
                 let icon, link;
-                (has_pages) ? icon = 'fa-check' : icon = 'fa-times negative';
-                (has_pages) ? link = 'https://GiaconBruno.github.io/' : link = 'https://github.com/giaconbruno/';
+                icon = (has_pages || homepage) ? 'fa-check' : 'fa-times negative';
+                link = (homepage) ? homepage :
+                    (has_pages) ? 'https://GiaconBruno.github.io/' : 'https://github.com/giaconbruno/';
+
                 //Removendo descricao null
-                (description === null) ? description = 'Sem descrição' : description;
+                description = (description === null) ? 'Sem descrição' : description;
 
                 //Igonara Repositorios
                 if (name !== "GiaconBruno.github.io") {
                     let content = document.querySelector('#myList');
                     //Valida se first value
                     if (!cont) content.innerHTML = '';
-
                     // Cria Elemento 'div'
                     let div = document.createElement('div');
                     div.classList.add("col-12");
@@ -49,8 +52,13 @@ function dados() {
                     // Criar novo registro
                     let list = `<a href="${link + name}" target="_blank">
                                     <div class="item text-break">
+                                    <div class="row m-0 justify-content-between">
+                                    <div class="col-auto px-0 data">Criado em: ${created_at} </div>
+                                    <div class="col-auto px-0 text-right data">Atualizado em: ${updated_at} </div>
+                                    <div class="position-absolute" style="top:0px;left:.5rem;right:.5rem">
+                                            </div>
+                                        </div>
                                         <div>
-                                            <span class="d-flow float-right data">${updated_at} </span>
                                             <i class="mr-3 mt-2 text-success fas ${icon} fa-lg"></i>
                                             <span class="text-break"><strong>${name}</strong></span>
                                         </div>
