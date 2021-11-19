@@ -15,6 +15,8 @@ const runAxios = async () => {
 };
 runAxios(); //EXECUTA FUNCAO ASSINCRONA
 
+const formatDate = (data) => (new Date(data).toLocaleString('pt-BR'))
+
 //CRIA FUNCAO GET (BUSCAR DADOS)
 function dados() {
     let cont = 0;
@@ -27,8 +29,8 @@ function dados() {
                 // updated_at = updated_at.substr(0, 10);
                 // updated_at = updated_at.slice(8, 10) + "/" + updated_at.slice(5, 7) + "/" + updated_at.slice(0, 4);
                 // updated_at = updated_at.replace(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z/g, '\$3-\$2-\$1')
-                updated_at = updated_at.slice(0, 10).split('-').reverse().join('/')
-                created_at = created_at.slice(0, 10).split('-').reverse().join('/')
+                updated_at = formatDate(updated_at)
+                created_at = formatDate(created_at)
                 //Verificando se existe page.io
                 let icon, link;
                 icon = (has_pages || homepage) ? 'fa-check' : 'fa-times negative';
