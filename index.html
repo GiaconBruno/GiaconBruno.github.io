@@ -2,69 +2,72 @@
 <html lang="pt">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos</title>
-    <link rel="shortcut icon"
-        href="https://avatars1.githubusercontent.com/u/62614331?s=460&u=e9aa99fd52f421775ce472ca665d8f089be5b3ad&v=4"
-        type="image/x-icon">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos</title>
+  <link rel="shortcut icon"
+    href="https://avatars1.githubusercontent.com/u/62614331?s=460&u=e9aa99fd52f421775ce472ca665d8f089be5b3ad&v=4"
+    type="image/x-icon">
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
-    <div class="container h-100">
-        <div class="row h-100 justify-content-center align-items-center">
-            <div class="col-12">
-                <p class="my-1 my-md-3 bigText text-center text-white"> Projetos </p>
-                <div class="border mx-2 my-1 my-md-3 pt-2 pb-3">
-                    <!-- DIV que recebe repositorios -->
-                    <div id="myList" class="row m-0 px-lg-5 pb-3"></div>
-                    <!-- Inicia codigo Contador -->
-                </div>
-                <div class="row flex-row-reverse justify-content-center align-items-center text-white">
-                    <div>
-                        <span class="px-2">
-                            <a href="mailto:giacon_bruno@hotmail.com">
-                                <i class="fas fa-envelope text-white social" title="giacon_bruno@hotmail.com"></i>
-                            </a>
-                        </span>
-                        <span class="px-2">
-                            <a href="https://github.com/GiaconBruno/" target="_blank">
-                                <i class="fab fa-github text-white social" title="GiaconBruno"></i>
-                            </a>
-                        </span>
-                        <span class="px-2">
-                            <a href="https://www.instagram.com/brunogiacon/" target="_blank">
-                                <i class="fab fa-instagram text-white social" title="@brunogiacon"></i>
-                            </a>
-                        </span>
-                        <span class="px-2">
-                            <a href="https://www.facebook.com/GiaconBruno/" target="_blank">
-                                <i class="fab fa-facebook text-white social" title="@GiaconBruno"></i>
-                            </a>
-                        </span>
-                    </div>
-                    <span class="px-2 font-weight-light">Desenvolvido por: Bruno Giacon</span>
-                </div>
-            </div>
-            <div class="col-12 text-center">
-                <span class="align-middle">Visualizações: </span>
-                <img src='https://megacontador.com.br/img-7Mbaffh1Ai9i0Ok9-7.gif'>
-                <!-- Teste -->
-                <!-- <img src='https://megacontador.com.br/img-W47h9wzYMBQks9VA-7.gif'> -->
-            </div>
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-end">
+      <div class="col-12">
+        <h1 class="my-1 my-md-3 bigText text-center text-white"> Projetos </h1>
+        <div class="border mx-2 my-1 my-md-3 pt-2 pb-3">
+          <!-- DIV que recebe repositorios -->
+          <div id="myList" class="row align-items-center m-0 px-lg-5 pb-3"></div>
         </div>
+        <!-- Inicia codigo Contador -->
+        <div class="row flex-row-reverse justify-content-center align-items-center text-white my-3">
+          <div>
+            <span class="px-2">
+              <a href="mailto:giacon_bruno@hotmail.com">
+                <i class="fas fa-envelope text-white social" title="giacon_bruno@hotmail.com"></i>
+              </a>
+            </span>
+            <span class="px-2">
+              <a href="https://github.com/GiaconBruno/" target="_blank">
+                <i class="fab fa-github text-white social" title="GiaconBruno"></i>
+              </a>
+            </span>
+            <span class="px-2">
+              <a href="https://www.instagram.com/brunogiacon/" target="_blank">
+                <i class="fab fa-instagram text-white social" title="@brunogiacon"></i>
+              </a>
+            </span>
+            <span class="px-2">
+              <a href="https://www.facebook.com/GiaconBruno/" target="_blank">
+                <i class="fab fa-facebook text-white social" title="@GiaconBruno"></i>
+              </a>
+            </span>
+          </div>
+          <span class="px-2 font-weight-light">Desenvolvido por: <strong>Bruno Giacon</strong></span>
+        </div>
+      </div>
+      <div class="col-12 mb-3 text-center">
+        <span class="text-white">Visualizações: <span id="count" class="px-2">0</span> </span>
+        <!-- <img src='https://megacontador.com.br/img-7Mbaffh1Ai9i0Ok9-7.gif'> -->
+        <!-- Teste -->
+        <!-- <img src='https://megacontador.com.br/img-W47h9wzYMBQks9VA-7.gif'> -->
+      </div>
     </div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/all.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/jquery-3.5.1.slim.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/axios.js"></script>
-    <script src="js/main.js"></script>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./js/all.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/jquery-3.5.1.slim.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/axios.js"></script>
+  <script src="./js/main.js"></script>
+  <script type="module" src="./js/singleFirestore.js"></script>
 </body>
 
 </html>

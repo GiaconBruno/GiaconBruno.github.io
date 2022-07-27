@@ -1,0 +1,16 @@
+ {
+   "apiKey": "AIzaSyCe8-b9HER_tJLW4nXl-9JpjwD-uR3mZ0g",
+   "authDomain": "countwebsites.firebaseapp.com",
+   "projectId": "countwebsites",
+   "storageBucket": "countwebsites.appspot.com",
+   "messagingSenderId": "172345207584",
+   "appId": "1:172345207584:web:0250b3b4253544c74ac545",
+   "dev": {
+     "main": "dev",
+     "hash": "ZGV2"
+   },
+   "prod": {
+     "main": "HomeGit",
+     "hash": "SG9tZUdpdA=="
+   }
+ }

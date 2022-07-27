@@ -47,8 +47,7 @@ function dados() {
                     if (!cont) content.innerHTML = '';
                     // Cria Elemento 'div'
                     let div = document.createElement('div');
-                    div.classList.add("col-12");
-                    div.classList.add("col-lg-6");
+                    div.classList.add("col-12", "col-lg-6");
                     // Define Elemento 'div' dentro do Elemento '#myList'
                     content.appendChild(div);
                     // Criar novo registro
